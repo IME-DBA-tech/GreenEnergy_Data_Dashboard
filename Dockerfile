@@ -1,4 +1,4 @@
-FROM my-devops-tools:latest AS builder
+FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY  app/requirements.txt .
 RUN mkdir -p /install && \
     pip install --prefix=/install --no-cache-dir -r requirements.txt
 
-FROM my-devops-tools:latest
+FROM python:3.11-slim
 
 RUN useradd -m myuser
 

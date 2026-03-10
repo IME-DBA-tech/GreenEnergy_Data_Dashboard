@@ -16,6 +16,7 @@ WORKDIR /home/myuser/app
 COPY --from=builder /install /usr/local
 
 
+
 COPY  --chown=myuser:myuser app/ .
 
 USER myuser
